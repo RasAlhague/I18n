@@ -14,10 +14,15 @@ public class CommonI18n {
 
     @PostConstruct
     private void commonI18n() {
-//        Locale currentLocale = new Locale("en", "US");
+        logger.info("------------ USING Locale.ENGLISH through Java ------------");
         ResourceBundle messages = ResourceBundle.getBundle("MessagesBundle", Locale.ENGLISH);
-//        ResourceBundle messages = ResourceBundle.getBundle("MessagesBundle", Locale.FRANCE);
+        logger.info(messages.getString("greetings"));
+        logger.info(messages.getString("inquiry"));
+        logger.info(messages.getString("farewell"));
 
+
+        logger.info("------------ USING Locale.FRANCE through Java ------------");
+        messages = ResourceBundle.getBundle("MessagesBundle", Locale.FRANCE);
         logger.info(messages.getString("greetings"));
         logger.info(messages.getString("inquiry"));
         logger.info(messages.getString("farewell"));

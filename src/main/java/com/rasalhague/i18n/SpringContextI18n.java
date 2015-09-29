@@ -15,6 +15,12 @@ public class SpringContextI18n implements MessageSourceAware {
 
     @Override
     public void setMessageSource(MessageSource messageSource) {
+        logger.info("------------ USING Locale.ENGLISH through Spring ------------");
+        logger.info(messageSource.getMessage("greetings", new Object[]{"%username%"}, Locale.ENGLISH));
+        logger.info(messageSource.getMessage("inquiry", new Object[]{"%username%"}, Locale.ENGLISH));
+        logger.info(messageSource.getMessage("farewell", new Object[]{"%username%"}, Locale.ENGLISH));
+
+        logger.info("------------ USING Locale.FRANCE through Spring ------------");
         logger.info(messageSource.getMessage("greetings", new Object[]{"%username%"}, Locale.FRANCE));
         logger.info(messageSource.getMessage("inquiry", new Object[]{"%username%"}, Locale.FRANCE));
         logger.info(messageSource.getMessage("farewell", new Object[]{"%username%"}, Locale.FRANCE));
